@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 const port = 3031;
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY_5);
+const genAI = new GoogleGenerativeAI(process.env.API_KEY_4);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-002" });
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
