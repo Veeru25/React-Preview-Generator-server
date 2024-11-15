@@ -17,6 +17,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
     "openai": "^4.69.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "proxy": "https://react-preview-generator-server.vercel.app/"
   }
 }
