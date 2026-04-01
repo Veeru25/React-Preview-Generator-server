@@ -7,13 +7,13 @@ const { dir } = require('console');
 require('dotenv').config();
 
 const app = express();
-const port = 3031;
+const port = 3001;
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY_5);
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-002" });
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.5-flash",
     systemInstruction: "Use the React function 'App' without any import or export statements, and ensure all styles are defined inline",
   });
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-exp-0827" });
