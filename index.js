@@ -80,7 +80,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { dir } = require('console');
+
 require('dotenv').config();
 
 const app = express();
