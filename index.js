@@ -90,7 +90,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY_5);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-002" });
 const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.5-flash",
     systemInstruction: "Use the React function 'App' without any import or export statements, and ensure all styles are defined inline",
   });
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-exp-0827" });
@@ -118,13 +118,14 @@ app.post('/chat', async (req, res) => {
         res.json({message:result.response.text()});
         console.log(result.response.modelVersion , "result");
     } catch (error) {
-        console.log(error, "err")   
+        console.error("Error from Gemini:", error);
+        res.status(500).json({ message: "An error occurred while communicating with AI model. Check server logs." });
     }
 });
-
 
 
 app.listen(port, () => {
     console.log(`Server listening on port http://localhost:${port}/chat`);
 });
 
+module.exports = app;
