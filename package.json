@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config=Scripts/config/webpack.dev.js --watch",
+    "build": "webpack --config=Scripts/config/webpack.prod.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
     "openai": "^4.69.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "proxy": "https://react-preview-generator-server.vercel.app/"
   }
 }
