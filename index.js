@@ -5,7 +5,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { dir } = require('console');
+
 require('dotenv').config();
 
 const app = express();
@@ -43,13 +43,14 @@ app.post('/chat', async (req, res) => {
         res.json({message:result.response.text()});
         console.log(result.response.modelVersion , "result");
     } catch (error) {
-        console.log(error, "err")   
+        console.error("Error from Gemini:", error);
+        res.status(500).json({ message: "An error occurred while communicating with AI model. Check server logs." });
     }
 });
-
 
 
 app.listen(port, () => {
     console.log(`Server listening on port http://localhost:${port}/chat`);
 });
 
+module.exports = app;
