@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
@@ -7,7 +9,7 @@ const { dir } = require('console');
 require('dotenv').config();
 
 const app = express();
-const port = 3001;
+const port = 3002;
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -51,5 +53,3 @@ app.listen(port, () => {
     console.log(`Server listening on port http://localhost:${port}/chat`);
 });
 
-
-module.exports = app;
